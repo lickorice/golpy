@@ -5,7 +5,7 @@ CURSOR_UP_ONE = '\x1b[1A'
 ERASE_LINE = '\x1b[2K'
 
 grid = []
-size = 32
+size = 48 
 update_time = 0.3
 
 
@@ -22,55 +22,66 @@ def init():
 	for i in range(size):
 		grid.append([False for i in range(size)])
 
-	# create a pulsar
-	grid[3][5] = True
-	grid[3][6] = True
-	grid[3][7] = True
-	grid[3][11] = True
-	grid[3][12] = True
-	grid[3][13] = True
-	grid[5][3] = True
-	grid[6][3] = True
-	grid[7][3] = True
-	grid[5][8] = True
-	grid[6][8] = True
-	grid[7][8] = True
-	grid[5][10] = True
-	grid[6][10] = True
-	grid[7][10] = True
-	grid[5][15] = True
-	grid[6][15] = True
-	grid[7][15] = True
-	grid[8][5] = True
-	grid[8][6] = True
-	grid[8][7] = True
-	grid[8][11] = True
-	grid[8][12] = True
-	grid[8][13] = True
-	grid[10][5] = True
-	grid[10][6] = True
-	grid[10][7] = True
-	grid[10][11] = True
-	grid[10][12] = True
-	grid[10][13] = True
-	grid[11][3] = True
-	grid[12][3] = True
-	grid[13][3] = True
-	grid[11][8] = True
-	grid[12][8] = True
-	grid[13][8] = True
-	grid[11][10] = True
-	grid[12][10] = True
-	grid[13][10] = True
-	grid[11][15] = True
-	grid[12][15] = True
-	grid[13][15] = True
-	grid[15][5] = True
-	grid[15][6] = True
-	grid[15][7] = True
-	grid[15][11] = True
-	grid[15][12] = True
-	grid[15][13] = True
+	if input("(Y/N) Would you like to use the default pulsar?").lower() == 'y':
+		# create a pulsar
+		grid[3][5] = True
+		grid[3][6] = True
+		grid[3][7] = True
+		grid[3][11] = True
+		grid[3][12] = True
+		grid[3][13] = True
+		grid[5][3] = True
+		grid[6][3] = True
+		grid[7][3] = True
+		grid[5][8] = True
+		grid[6][8] = True
+		grid[7][8] = True
+		grid[5][10] = True
+		grid[6][10] = True
+		grid[7][10] = True
+		grid[5][15] = True
+		grid[6][15] = True
+		grid[7][15] = True
+		grid[8][5] = True
+		grid[8][6] = True
+		grid[8][7] = True
+		grid[8][11] = True
+		grid[8][12] = True
+		grid[8][13] = True
+		grid[10][5] = True
+		grid[10][6] = True
+		grid[10][7] = True
+		grid[10][11] = True
+		grid[10][12] = True
+		grid[10][13] = True
+		grid[11][3] = True
+		grid[12][3] = True
+		grid[13][3] = True
+		grid[11][8] = True
+		grid[12][8] = True
+		grid[13][8] = True
+		grid[11][10] = True
+		grid[12][10] = True
+		grid[13][10] = True
+		grid[11][15] = True
+		grid[12][15] = True
+		grid[13][15] = True
+		grid[15][5] = True
+		grid[15][6] = True
+		grid[15][7] = True
+		grid[15][11] = True
+		grid[15][12] = True
+		grid[15][13] = True
+	else:
+		while True:
+			x = list(map(int, input("Enter X and Y of coordinate of block: (0 to end) \n").split()))
+			if x[0] == 0:
+				return
+			else:
+				grid[x[0]][x[1]] = True
+				print("Added a block to {},{}.)".format(x[0], x[1]))
+			
+		
 
 
 def update():
