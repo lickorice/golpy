@@ -6,7 +6,7 @@ ERASE_LINE = '\x1b[2K'
 
 grid = []
 size = 48 
-update_time = 0.3
+update_time = 0.1
 
 
 def loop():
