@@ -22,7 +22,7 @@ def init():
 	for i in range(size):
 		grid.append([False for i in range(size)])
 
-	if input("(Y/N) Would you like to use the default pulsar?").lower() == 'y':
+	if input("(Y/N) Would you like to use the default pulsar? ").lower() == 'y':
 		# create a pulsar
 		grid[3][5] = True
 		grid[3][6] = True
