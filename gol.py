@@ -6,12 +6,13 @@ ERASE_LINE = '\x1b[2K'
 
 grid = []
 size = 32
+update_time = 0.3
 
 
 def loop():
 	init()
 	while True:
-		time.sleep(0.5)
+		time.sleep(update_time)
 		update()
 		printgrid()
 
@@ -143,7 +144,7 @@ def printgrid():
 			if grid[x][y]:
 				xstr += '■ '
 			else:
-				xstr += '□ '
+				xstr += '  '
 		print(xstr)
 
 
